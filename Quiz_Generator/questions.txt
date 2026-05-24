@@ -1,0 +1,10 @@
+What is Python?|Python is a programming language
+Full form of AI?|Artificial Intelligence
+Full form of ML|Machine Learning
+What is 225 + 225 ?|450
+Who is the Prime Minister of India ?|Narendra Modi
+Gen AI is not a subset of AI (True / False) ?|False
+Which political party is currently ruling in India ?|BJP
+Who developed chatgpt ?|OpenAI
+Who developed Gemini ?|Google
+Who developed Copilot ?|Microsoft
