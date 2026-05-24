@@ -1,0 +1,9 @@
+Dhoni : 6
+Prashanth : 9
+Loki : 9
+Raghava : 7
+Virat : 8
+Rohit : 5
+Ram : 9
+Hardik : 8
+Lakshmi : 6
