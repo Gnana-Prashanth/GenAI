@@ -1,0 +1,49 @@
+{
+  "greetings": {
+    "patterns": ["hello", "hi", "hey", "good morning", "good evening", "good afternoon", "howdy", "sup", "what's up"],
+    "responses": ["Hi! How can I help you today?", "Hello! What can I do for you?", "Hey there! Ask me anything."]
+  },
+  "farewell": {
+    "patterns": ["bye", "goodbye", "see you", "later", "take care", "exit", "quit"],
+    "responses": ["Goodbye! Have a great day.", "See you soon! Take care.", "Bye! Feel free to return anytime."]
+  },
+  "thanks": {
+    "patterns": ["thank you", "thanks", "thank u", "thx", "ty"],
+    "responses": ["You're welcome!", "Happy to help!", "Anytime! Let me know if you need more help."]
+  },
+  "machine_learning": {
+    "patterns": ["machine learning", "what is ml", "ml", "supervised learning", "unsupervised learning"],
+    "responses": ["Machine Learning is a branch of AI that allows systems to learn from data and improve over time without being explicitly programmed.", "ML involves algorithms that learn patterns from data to make decisions or predictions."]
+  },
+  "artificial_intelligence": {
+    "patterns": ["artificial intelligence", "what is ai", "ai", "intelligence"],
+    "responses": ["Artificial Intelligence is the simulation of human intelligence by machines, enabling them to perform tasks like reasoning, learning, and problem-solving.", "AI refers to machines that can perform tasks that normally require human intelligence."]
+  },
+  "deep_learning": {
+    "patterns": ["deep learning", "neural network", "neural networks", "cnn", "rnn", "lstm"],
+    "responses": ["Deep Learning is a subset of ML using neural networks with many layers to learn representations of data.", "Neural networks are computing systems inspired by the human brain, used to recognize patterns."]
+  },
+  "python": {
+    "patterns": ["python", "programming language", "code", "coding", "programming"],
+    "responses": ["Python is a popular high-level programming language widely used in AI, Data Science, and web development.", "Python's simplicity and powerful libraries like TensorFlow, Pandas, and Scikit-learn make it ideal for ML projects."]
+  },
+  "data_science": {
+    "patterns": ["data science", "data analysis", "data scientist", "analytics", "data"],
+    "responses": ["Data Science combines statistics, programming, and domain expertise to extract insights from data.", "A Data Scientist collects, processes, and analyzes large datasets to help make data-driven decisions."]
+  },
+  "flask": {
+    "patterns": ["flask", "web framework", "backend", "api"],
+    "responses": ["Flask is a lightweight Python web framework used to build web applications and APIs quickly and easily.", "Flask makes it easy to create web backends with routes, templates, and request handling."]
+  },
+  "chatbot": {
+    "patterns": ["chatbot", "what are you", "who are you", "bot", "assistant"],
+    "responses": ["I'm an AI Chatbot built with Python and Flask! I can answer questions on AI, ML, and more.", "I'm your AI assistant. Ask me about Machine Learning, Data Science, Python, or anything else!"]
+  },
+  "nlp": {
+    "patterns": ["nlp", "natural language processing", "text processing", "language model"],
+    "responses": ["Natural Language Processing (NLP) is a field of AI focused on enabling machines to understand and generate human language.", "NLP powers chatbots, translation, sentiment analysis, and more!"]
+  },
+  "default": {
+    "responses": ["I'm not sure I understand. Could you rephrase that?", "Hmm, I don't have information on that yet. Try asking about AI, ML, Python, or Data Science!", "That's outside my knowledge. Ask me about Machine Learning or Data Science!"]
+  }
+}

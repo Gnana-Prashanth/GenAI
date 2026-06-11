@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Chatbot</title>
+  <link rel="stylesheet" href="/static/style.css" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- ===== WELCOME HEADER ===== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">AI Chatbot</span>
+      </div>
+      <p class="header-tagline">Powered by Machine Learning &amp; Flask</p>
+    </div>
+  </header>
+
+  <!-- ===== MAIN CHAT CONTAINER ===== -->
+  <main class="chat-wrapper">
+    <div class="chat-card">
+
+      <!-- Chat header bar -->
+      <div class="chat-topbar">
+        <span class="status-dot"></span>
+        <span class="status-label">Assistant · Online</span>
+      </div>
+
+      <!-- Message display area -->
+      <div class="chat-messages" id="chatMessages">
+        <div class="message bot-message">
+          <div class="avatar bot-avatar">🤖</div>
+          <div class="bubble">
+            <p>Welcome to <strong>AI Chatbot</strong>! 👋</p>
+            <p>Ask me about <em>Machine Learning</em>, <em>AI</em>, <em>Python</em>, <em>Data Science</em>, or just say hello!</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Typing indicator (hidden by default) -->
+      <div class="typing-indicator" id="typingIndicator" style="display:none;">
+        <div class="avatar bot-avatar">🤖</div>
+        <div class="typing-dots">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+
+      <!-- Input area -->
+      <div class="chat-input-area">
+        <input
+          type="text"
+          id="userInput"
+          class="chat-input"
+          placeholder="Type your message here..."
+          autocomplete="off"
+          maxlength="300"
+        />
+        <button class="send-btn" id="sendBtn" onclick="sendMessage()">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+            <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Quick suggestion chips -->
+      <div class="suggestion-chips">
+        <span class="chip" onclick="fillInput('What is Machine Learning?')">What is ML?</span>
+        <span class="chip" onclick="fillInput('Tell me about Python')">Python</span>
+        <span class="chip" onclick="fillInput('What is Deep Learning?')">Deep Learning</span>
+        <span class="chip" onclick="fillInput('What is Data Science?')">Data Science</span>
+        <span class="chip" onclick="fillInput('What is NLP?')">NLP</span>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <p>Built with Flask &amp; Python &nbsp;·&nbsp; Think Champ PV LTD Internship Project</p>
+  </footer>
+
+  <script>
+    const chatMessages = document.getElementById('chatMessages');
+    const userInput   = document.getElementById('userInput');
+    const sendBtn     = document.getElementById('sendBtn');
+    const typingInd   = document.getElementById('typingIndicator');
+
+    // Send on Enter key
+    userInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') sendMessage();
+    });
+
+    function fillInput(text) {
+      userInput.value = text;
+      userInput.focus();
+    }
+
+    function appendMessage(text, sender) {
+      const wrap = document.createElement('div');
+      wrap.classList.add('message', sender === 'user' ? 'user-message' : 'bot-message');
+
+      const avatar = document.createElement('div');
+      avatar.classList.add('avatar', sender === 'user' ? 'user-avatar' : 'bot-avatar');
+      avatar.textContent = sender === 'user' ? '🧑' : '🤖';
+
+      const bubble = document.createElement('div');
+      bubble.classList.add('bubble');
+      bubble.textContent = text;
+
+      // User messages: avatar on right
+      if (sender === 'user') {
+        wrap.appendChild(bubble);
+        wrap.appendChild(avatar);
+      } else {
+        wrap.appendChild(avatar);
+        wrap.appendChild(bubble);
+      }
+
+      chatMessages.appendChild(wrap);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    async function sendMessage() {
+      const message = userInput.value.trim();
+      if (!message) return;
+
+      // Disable input while waiting
+      userInput.value = '';
+      sendBtn.disabled = true;
+
+      // Show user message
+      appendMessage(message, 'user');
+
+      // Show typing indicator
+      typingInd.style.display = 'flex';
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+
+      try {
+        const res = await fetch('/chat', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ message })
+        });
+        const data = await res.json();
+
+        // Simulate slight delay for realism
+        await new Promise(r => setTimeout(r, 600));
+        typingInd.style.display = 'none';
+
+        appendMessage(data.response || "Sorry, something went wrong.", 'bot');
+      } catch (err) {
+        typingInd.style.display = 'none';
+        appendMessage("Network error. Please try again.", 'bot');
+      }
+
+      sendBtn.disabled = false;
+      userInput.focus();
+    }
+  </script>
+</body>
+</html>
