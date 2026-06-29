@@ -1,0 +1,31 @@
+fever,cough,headache,fatigue,nausea,sore_throat,runny_nose,body_ache,vomiting,diarrhea,chest_pain,shortness_of_breath,disease
+1,1,1,1,0,0,0,1,0,0,0,0,Flu
+1,0,1,1,0,0,0,0,0,0,0,0,Typhoid
+0,1,0,1,0,1,1,0,0,0,0,0,Common Cold
+1,0,0,1,1,0,0,0,1,1,0,0,Food Poisoning
+0,0,1,0,0,0,0,0,0,0,1,0,Migraine
+1,1,0,1,0,1,0,1,0,0,0,0,Strep Throat
+0,0,0,1,1,0,0,0,1,0,0,0,Gastritis
+1,0,0,1,0,0,0,0,0,0,0,1,Pneumonia
+0,1,0,0,0,0,0,0,0,0,1,1,Asthma
+1,0,1,1,1,0,0,1,0,0,0,0,Dengue
+0,0,0,0,1,0,0,0,1,1,0,0,Gastroenteritis
+1,1,1,1,0,1,1,1,0,0,0,0,Flu
+0,0,1,0,0,0,0,0,0,0,0,0,Tension Headache
+1,0,0,0,0,0,0,0,0,0,0,0,Malaria
+1,1,0,0,0,0,0,0,0,0,0,0,Bronchitis
+0,0,0,1,0,0,0,1,0,0,1,0,Angina
+1,0,1,1,1,0,0,1,1,0,0,0,Dengue
+0,1,0,1,0,1,1,0,0,0,0,0,Common Cold
+1,0,0,1,0,0,0,0,0,1,0,0,Typhoid
+0,0,0,0,1,0,0,0,1,1,0,0,Food Poisoning
+1,1,1,1,0,0,0,1,0,0,0,0,Flu
+0,0,1,1,0,0,0,0,0,0,0,0,Migraine
+1,0,0,1,0,1,0,0,0,0,0,0,Strep Throat
+0,0,0,0,0,0,0,0,0,0,1,1,Asthma
+1,1,0,1,0,0,0,0,0,0,0,1,Pneumonia
+0,0,0,1,1,0,0,0,1,0,0,0,Gastritis
+1,0,1,0,0,0,0,0,0,0,0,0,Malaria
+0,1,0,0,0,1,1,0,0,0,0,0,Common Cold
+1,0,0,1,1,0,0,1,1,1,0,0,Dengue
+0,0,0,0,0,0,0,1,0,0,1,0,Angina
